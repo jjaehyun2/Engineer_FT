@@ -1,0 +1,31 @@
+# 전처리 설정
+raw_dir: "../raw"
+processed_dir: "../processed"
+
+# 전처리 작업 지정
+process_codesearchnet: true
+process_humaneval: true
+process_mbpp: true
+process_apps: true
+process_codealplaca: true
+
+# 코드 전처리 설정
+remove_comments: true
+normalize_whitespace: true
+handle_special_chars: true
+
+# 설명 전처리 설정
+remove_html: true
+clean_special_chars: true
+normalize_whitespace: true
+
+# 필터링 기준
+min_code_length: 50  # 코드 최소 길이
+max_code_length: 2000  # 코드 최대 길이
+min_explanation_length: 100  # 설명 최소 길이
+max_explanation_length: 1000  # 설명 최대 길이
+min_prompt_length: 50  # 문제 설명 최소 길이
+min_solution_length: 50  # 해결책 최소 길이
+
+# 언어 필터링 (비어있으면 모든 언어 포함)
+languages_to_include: ["python", "javascript", "java"]

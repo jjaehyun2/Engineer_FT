@@ -1,0 +1,67 @@
+{
+    "total_examples": 100000,
+    "by_category": {
+        "code_explanation": 75000,
+        "code_generation": 25000
+    },
+    "by_language": {
+        "python": 60000,
+        "javascript": 20000,
+        "java": 15000,
+        "other": 5000
+    },
+    "by_source": {
+        "codesearchnet": 40000,
+        "stack_overflow": 20000,
+        "github_extracted": 15000,
+        "gpt4_generated": 20000,
+        "humaneval": 164,
+        "mbpp": 974,
+        "apps": 3862
+    },
+    "length_statistics": {
+        "input": {
+            "mean": 324.5,
+            "median": 287,
+            "p10": 98,
+            "p90": 723
+        },
+        "output": {
+            "mean": 412.3,
+            "median": 356,
+            "p10": 132,
+            "p90": 812
+        }
+    },
+    "quality_metrics": {
+        "duplicate_rate": 0.02,
+        "python_syntax_error_rate": 0.005,
+        "instruction_consistency": 0.98,
+        "language_detection_confidence": 0.995
+    },
+    "split_statistics": {
+        "train": {
+            "count": 80000,
+            "by_category": {
+                "code_explanation": 60000,
+                "code_generation": 20000
+            }
+        },
+        "validation": {
+            "count": 10000,
+            "by_category": {
+                "code_explanation": 7500,
+                "code_generation": 2500
+            }
+        },
+        "test": {
+            "count": 10000,
+            "by_category": {
+                "code_explanation": 7500,
+                "code_generation": 2500
+            }
+        }
+    },
+    "creation_date": "2023-07-15",
+    "last_updated": "2023-07-20"
+}

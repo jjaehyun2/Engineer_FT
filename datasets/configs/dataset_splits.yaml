@@ -1,0 +1,50 @@
+# 데이터셋 분할 설정
+processed_dir: "../processed"
+final_dir: "../final"
+random_seed: 42
+
+# 데이터셋 비율 설정
+split_ratios:
+  train: 0.8
+  validation: 0.1
+  test: 0.1
+
+# 데이터셋 목록 및 샘플링 설정
+datasets:
+  # 코드 설명 데이터셋
+  - path: "code_explanation/en/codesearchnet"
+    max_samples: 30000
+    language: "python"
+  
+  - path: "code_explanation/en/codesearchnet"
+    max_samples: 5000
+    language: "javascript"
+  
+  - path: "code_explanation/en/codesearchnet"
+    max_samples: 5000
+    language: "java"
+  
+  - path: "code_explanation/en/codealplaca"
+    max_samples: 10000
+  
+  - path: "code_explanation/en/github_extracted"
+    max_samples: 15000
+  
+  - path: "code_explanation/en/gpt4_generated"
+    max_samples: 10000
+  
+  # 코드 생성 데이터셋
+  - path: "code_generation/en/humaneval"
+    max_samples: null  # 모든 예제 사용
+  
+  - path: "code_generation/en/mbpp"
+    max_samples: null  # 모든 예제 사용
+  
+  - path: "code_generation/en/apps"
+    max_samples: 5000
+  
+  - path: "code_generation/en/gpt4_generated"
+    max_samples: 15000
+
+# 최종 데이터셋 형식
+output_format: "jsonl"  # 출력 형식 (jsonl, json, parquet)

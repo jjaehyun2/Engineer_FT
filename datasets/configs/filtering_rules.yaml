@@ -1,0 +1,36 @@
+# 품질 필터링 규칙
+
+# 일반 필터링
+minimum_lengths:
+  code: 50  # 최소 코드 길이
+  explanation: 100  # 최소 설명 길이
+  prompt: 30  # 최소 문제 설명 길이
+
+maximum_lengths:
+  code: 2000  # 최대 코드 길이
+  explanation: 1000  # 최대 설명 길이
+
+# 구문적 필터링
+syntax_validation:
+  check_python_syntax: true  # Python 코드 구문 검사 여부
+  check_javascript_syntax: true  # JavaScript 코드 구문 검사 여부
+  
+# 내용 필터링
+content_filters:
+  remove_trivial_code: true  # 단순한 코드 제거 (예: print 문만 있는 코드)
+  remove_unclear_explanations: true  # 불분명한 설명 제거
+  
+# 중복 필터링
+duplicate_detection:
+  enabled: true
+  similarity_threshold: 0.85  # 유사도 기준 (코사인 유사도)
+  
+# 언어 필터
+language_filter:
+  enabled: true
+  allowed_languages: ["python", "javascript", "java"]
+  
+# 품질 점수
+quality_scoring:
+  enabled: true
+  min_score_threshold: 0.7  # 최소 품질 점수 기준 (0-1)
