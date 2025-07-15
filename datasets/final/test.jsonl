@@ -1,0 +1,3 @@
+// 예시
+
+// {"instruction": "Write a function that checks if a string is a palindrome", "input": "", "output": "def is_palindrome(s):\n    # Remove non-alphanumeric characters and convert to lowercase\n    s = ''.join(c.lower() for c in s if c.isalnum())\n    # Check if the string equals its reverse\n    return s == s[::-1]", "category": "code_generation", "language": "python", "source": "humaneval"}
