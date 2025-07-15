@@ -1,0 +1,36 @@
+# 데이터셋 다운로드 설정
+base_output_dir: "../raw"
+
+# HuggingFace 데이터셋
+huggingface_datasets:
+  - name: "code_search_net"
+    subset: "python"
+    category: "code_explanation"
+  
+  - name: "code_search_net"
+    subset: "javascript" 
+    category: "code_explanation"
+  
+  - name: "code_search_net"
+    subset: "java"
+    category: "code_explanation"
+  
+  - name: "openai/humaneval"
+    category: "code_generation"
+  
+  - name: "mbpp"
+    category: "code_generation"
+  
+  - name: "codeparrot/apps"
+    category: "code_generation"
+  
+  - name: "sahil2801/CodeAlpaca-20k"
+    category: "code_explanation"
+
+# GitHub 리포지토리
+github_repos:
+  - url: "https://github.com/microsoft/CodeXGLUE.git"
+    category: "code_explanation"
+  
+  - url: "https://github.com/HKUNLP/DS-1000.git"
+    category: "code_generation"
