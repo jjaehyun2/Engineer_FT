@@ -1,0 +1,34 @@
+{
+    "languages": [
+        "python",
+        "javascript",
+        "java"
+    ],
+    "files_per_language": 500000,
+    "output_dir": "data/raw",
+    "use_streaming": true,
+    "chunk_size": 5000,
+    "min_file_size": 100,
+    "max_file_size": 500000,
+    "github_filters": {
+        "min_stars": 0,
+        "exclude_forks": false
+    },
+    "download_parallelism": 1,
+    "timeout_seconds": 3600,
+    "retry_count": 3,
+    "language_specific": {
+        "python": {
+            "extensions": [".py"],
+            "files_per_language": 600000
+        },
+        "javascript": {
+            "extensions": [".js", ".jsx"],
+            "files_per_language": 400000
+        },
+        "java": {
+            "extensions": [".java"],
+            "files_per_language": 300000
+        }
+    }
+}
