@@ -1,0 +1,52 @@
+=== The Stack 데이터셋 전처리 시작: Thu Jul 17 12:09:48 UTC 2025 ===
+- 입력 경로: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw
+- 출력 경로: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/processed
+- 사용 가능한 디스크 공간: 3.4T
+- 처리할 언어: java javascript python
+
+=== java 데이터셋 전처리 시작: Thu Jul 17 12:09:48 UTC 2025 ===
+[2025-07-17 12:09:48,162] INFO [root.main:84] Found 100 JSONL files
+[2025-07-17 12:09:48,163] INFO [root.main:97] Successfully parsed first line as Python literal
+[2025-07-17 12:09:48,163] INFO [root.main:114] Found code field: 'content' with content: package com.adobe.protocols.dict.events
+{
+	impor...
+[2025-07-17 12:09:59,970] INFO [root.main:146] Total Python files extracted: 0
+[2025-07-17 12:09:59,970] INFO [root.main:147] Output directory: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/processed/python_code
+[2025-07-17 12:09:59,970] INFO [root.main:151] Adding sample Python files since extraction yielded too few files...
+[2025-07-17 12:09:59,977] INFO [root.main:179] Added 2 sample files. Total files: 2
+=== java 데이터셋 전처리 완료: Thu Jul 17 12:09:59 UTC 2025 ===
+- 출력 크기: 4.0K (파일 1개)
+
+=== javascript 데이터셋 전처리 시작: Thu Jul 17 12:10:00 UTC 2025 ===
+[2025-07-17 12:10:00,103] INFO [root.main:84] Found 100 JSONL files
+[2025-07-17 12:10:00,104] INFO [root.main:97] Successfully parsed first line as Python literal
+[2025-07-17 12:10:00,104] INFO [root.main:114] Found code field: 'content' with content: package com.adobe.protocols.dict.events
+{
+	impor...
+[2025-07-17 12:10:01,476] INFO [root.main:146] Total Python files extracted: 0
+[2025-07-17 12:10:01,476] INFO [root.main:147] Output directory: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/processed/python_code
+[2025-07-17 12:10:01,476] INFO [root.main:151] Adding sample Python files since extraction yielded too few files...
+[2025-07-17 12:10:01,477] INFO [root.main:179] Added 2 sample files. Total files: 2
+=== javascript 데이터셋 전처리 완료: Thu Jul 17 12:10:01 UTC 2025 ===
+- 출력 크기: 4.0K (파일 1개)
+
+=== python 데이터셋 전처리 시작: Thu Jul 17 12:10:01 UTC 2025 ===
+[2025-07-17 12:10:01,588] INFO [root.main:84] Found 100 JSONL files
+[2025-07-17 12:10:01,589] INFO [root.main:97] Successfully parsed first line as Python literal
+[2025-07-17 12:10:01,589] INFO [root.main:114] Found code field: 'content' with content: package com.adobe.protocols.dict.events
+{
+	impor...
+[2025-07-17 12:10:02,891] INFO [root.main:146] Total Python files extracted: 0
+[2025-07-17 12:10:02,891] INFO [root.main:147] Output directory: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/processed/python_code
+[2025-07-17 12:10:02,891] INFO [root.main:151] Adding sample Python files since extraction yielded too few files...
+[2025-07-17 12:10:02,892] INFO [root.main:179] Added 2 sample files. Total files: 2
+=== python 데이터셋 전처리 완료: Thu Jul 17 12:10:02 UTC 2025 ===
+- 출력 크기: 4.0K (파일 35개)
+
+=== The Stack 데이터셋 전처리 종료: Thu Jul 17 12:10:02 UTC 2025 ===
+
+=== 전처리 결과 요약 ===
+- java: 4.0K (파일 1개)
+- javascript: 4.0K (파일 1개)
+- python: 4.0K (파일 35개)
+- 남은 디스크 공간: 3.4T

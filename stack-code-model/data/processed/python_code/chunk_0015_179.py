@@ -1,0 +1,3 @@
+FUNCTION-POOL /DMO/FLIGHT_TRAVEL_API17.       "MESSAGE-ID ..
+
+* INCLUDE /DMO/LFLIGHT_TRAVEL_API17D...        " Local class definition

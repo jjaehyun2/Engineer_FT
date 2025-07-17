@@ -1,0 +1,1 @@
+﻿package {	public class Wei	{		public var Name:String;		public var turno:int;		public var slot:String;		public var requerimento:Requerimento;		public var efeito:Efeito;		public var atributos:Atributos;	}}

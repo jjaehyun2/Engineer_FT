@@ -1,0 +1,1 @@
+﻿/** * @package nl.eriknoorland.parallax */package nl.eriknoorland.parallax{	public class State{		public static const RUN:String = 'run';		public static const PAUSE:String = 'pause';	}}

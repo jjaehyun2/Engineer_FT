@@ -1,0 +1,106 @@
+REPORT zabak_usage.
+
+* See https://github.com/abapinho/abaK
+
+********************************************************************************
+* MIT License
+*
+* Copyright (c) 2018 Nuno Godinho
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+********************************************************************************
+
+DATA: go_usage TYPE REF TO zcl_abak_usage.
+
+INITIALIZATION.
+  PERFORM append_version_to_title.
+
+START-OF-SELECTION.
+  CREATE OBJECT go_usage.
+
+  PERFORM list_subclasses.
+  SKIP.
+  PERFORM list_zabak.
+  SKIP.
+  PERFORM list_where_used.
+
+FORM append_version_to_title.
+  sy-title = |{ sy-title } (v{ zif_abak_consts=>version })|.
+ENDFORM.
+
+FORM list_subclasses.
+  DATA: t_class TYPE seo_class_names,
+        class   LIKE LINE OF t_class.
+
+  WRITE / 'Content classes (implementing ZIF_ABAK_SOURCE):'.
+  t_class = go_usage->get_subclasses( 'ZIF_ABAK_SOURCE' ).
+  SORT t_class.
+  LOOP AT t_class INTO class.
+    WRITE: /4 class INTENSIFIED OFF.
+  ENDLOOP.
+
+  SKIP.
+
+  WRITE / 'Format classes (implementing ZIF_ABAK_FORMAT):'.
+  t_class = go_usage->get_subclasses( 'ZIF_ABAK_FORMAT' ).
+  SORT t_class.
+  LOOP AT t_class INTO class.
+    WRITE: /4 class INTENSIFIED OFF.
+  ENDLOOP.
+
+ENDFORM.
+
+FORM list_where_used.
+  DATA: t_tadir TYPE tt_tadir,
+        exp_abak TYPE REF TO zcx_abak.
+
+  FIELD-SYMBOLS: <s_tadir> LIKE LINE OF t_tadir.
+
+  WRITE : / 'abaK usage (objects using class ZCL_ABAK_FACTORY outside the abaK package):'.
+  FORMAT INTENSIFIED OFF.
+  TRY.
+    t_tadir = go_usage->get_where_used( ).
+    LOOP AT t_tadir ASSIGNING <s_tadir>.
+      WRITE: /4 <s_tadir>-object, <s_tadir>-obj_name, <s_tadir>-devclass.
+    ENDLOOP.
+    IF sy-subrc <> 0.
+      WRITE: /4 'No objects found'.
+    ENDIF.
+  CATCH zcx_abak INTO exp_abak.
+    WRITE exp_abak->get_text( ).
+  ENDTRY.
+  FORMAT INTENSIFIED ON.
+ENDFORM.
+
+FORM list_zabak.
+  DATA: t_zabak TYPE zcl_abak_usage=>ty_zabak_t.
+  FIELD-SYMBOLS: <s_zabak> LIKE LINE OF t_zabak.
+
+  WRITE : / 'ZABAK records:'.
+  FORMAT INTENSIFIED OFF.
+  t_zabak = go_usage->get_zabak( ).
+  LOOP AT t_zabak ASSIGNING <s_zabak>.
+    CLEAR <s_zabak>-mandt.
+    WRITE / <s_zabak>.
+  ENDLOOP.
+  IF sy-subrc <> 0.
+    WRITE / 'Empty'.
+  ENDIF.
+  FORMAT INTENSIFIED ON.
+ENDFORM.

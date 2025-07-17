@@ -1,0 +1,9 @@
+[2025-07-17 12:11:22,622] INFO [root.main:84] Found 100 JSONL files
+[2025-07-17 12:11:22,623] INFO [root.main:97] Successfully parsed first line as Python literal
+[2025-07-17 12:11:22,623] INFO [root.main:114] Found code field: 'content' with content: package com.adobe.protocols.dict.events
+{
+	impor...
+[2025-07-17 12:11:23,931] INFO [root.main:146] Total Python files extracted: 0
+[2025-07-17 12:11:23,931] INFO [root.main:147] Output directory: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/processed/python_code
+[2025-07-17 12:11:23,931] INFO [root.main:151] Adding sample Python files since extraction yielded too few files...
+[2025-07-17 12:11:23,932] INFO [root.main:179] Added 2 sample files. Total files: 2

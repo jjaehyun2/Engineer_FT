@@ -1,0 +1,3 @@
+FUNCTION-POOL ZTP_FLIGHT_TRAVEL_API.      "MESSAGE-ID ..
+
+* INCLUDE LZTP_FLIGHT_TRAVEL_APID...        " Local class definition

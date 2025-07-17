@@ -1,0 +1,2 @@
+﻿package src.events {		import starling.events.Event;
+	public class PlayerDataEvent extends Event {				public static const CAR_ID_CHANGED:		String = "PlayerDataEvent.CAR_ID_CHANGED";				public function PlayerDataEvent( $type:String ):void		{			super( $type );		}			}	}

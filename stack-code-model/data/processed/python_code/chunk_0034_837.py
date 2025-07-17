@@ -1,0 +1,340 @@
+/*
+Copyright (C) 2011 by Billy Schoenberg
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+package com.bschoenberg.components.supportClasses
+{
+    import com.bschoenberg.components.events.TreeDataEvent;
+    import com.bschoenberg.components.events.TreeEvent;
+    
+    import flash.events.Event;
+    import flash.events.EventDispatcher;
+    
+    import mx.collections.ArrayCollection;
+    import mx.collections.IList;
+    
+    /**
+     * Dispatched when a child item is added
+     *
+     * @eventType com.bschoenberg.components.events.TreeDataEvent.ADD
+     */ 
+    [Event(name="add", type="com.bschoenberg.components.events.TreeDataEvent")]
+    
+    /**
+     * Dispatched when a child item is removed
+     *
+     * @eventType com.bschoenberg.components.events.TreeDataEvent.REMOVE
+     */ 
+    [Event(name="remove", type="com.bschoenberg.components.events.TreeDataEvent")]
+    
+    /**
+     * Dispatched when the expanded property is set to true. This will animate an expansion
+     *
+     * @eventType com.bschoenberg.components.events.TreeEvent.NODE_EXPANDED
+     */
+    [Event(name="nodeExpanded", type="com.bschoenberg.components.events.TreeEvent")]
+    
+    /**
+     * Dispatched when a child item is added. This will animate an insertion
+     *
+     * @eventType com.bschoenberg.components.events.TreeEvent.NODE_INSERTED
+     */
+    [Event(name="nodeInserted", type="com.bschoenberg.components.events.TreeEvent")]
+    
+    /**
+     * Dispatched when the expanded property is set to false. This will animate a closure
+     *
+     * @eventType com.bschoenberg.components.events.TreeEvent.NODE_COLLAPSED
+     */
+    [Event(name="nodeCollapsed", type="com.bschoenberg.components.events.TreeEvent")]
+    
+    /**
+     * Dispatched when an item is removed. This will animate a removal
+     *
+     * @eventType com.bschoenberg.components.events.TreeEvent.NODE_REMOVED
+     */
+    [Event(name="nodeRemoved", type="com.bschoenberg.components.events.TreeEvent")]
+    
+    /**
+     * This class is the main implementor of ITreeItem.  It is the item that will be passed to the TreeItemRenderer
+     * It is dynamic so that you may add any arbitrary data to it to be displayed by the tree.
+     */ 
+    public dynamic class TreeItem extends EventDispatcher implements ITreeItem
+    {
+        private var _expanded:Boolean;
+        private var _parent:ITreeItem;
+        private var _children:IList;
+        
+        public function TreeItem()
+        {
+            _children = new ArrayCollection();
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function getItemAt(index:int):ITreeItem
+        {
+            return _children.getItemAt(index) as ITreeItem;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function hasDescendant(item:ITreeItem):Boolean
+        {
+            for each(var child:ITreeItem in _children)
+            {
+                if(child == item)
+                    return true;
+                
+                if(child.hasDescendant(item))
+                    return true;
+            }
+            
+            return false;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function addItem(item:ITreeItem,dispatchTreeEvent:Boolean=true):void
+        {
+            addEventListeners(item);
+            
+            item.setParent(this);
+            _children.addItem(item);
+            if(dispatchTreeEvent)
+                dispatchEvent(new TreeEvent(TreeEvent.NODE_INSERTED,item));
+            
+            dispatchEvent(new TreeDataEvent(TreeDataEvent.ADD,item,this));
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function addItemAt(item:ITreeItem, index:int,dispatchTreeEvent:Boolean=true):void
+        {
+            if(index < 0)
+                throw new Error("Tried to add child item at index: " + index);
+            
+            if(index > _children.length)
+                throw new Error("Tried to add child item past children length: " + index + " children length: " + _children.length );
+            
+            addEventListeners(item);
+            
+            item.setParent(this);
+            _children.addItemAt(item,index);
+            if(dispatchTreeEvent)
+                dispatchEvent(new TreeEvent(TreeEvent.NODE_INSERTED,item));
+            
+            dispatchEvent(new TreeDataEvent(TreeDataEvent.ADD,item,this));
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function removeItem(item:ITreeItem,dispatchTreeEvent:Boolean=true):ITreeItem
+        {
+            var retVal:ITreeItem;
+            var index:int = _children.getItemIndex(item);
+            if(index == -1)
+            {
+                for each(var child:ITreeItem in _children)
+                {
+                    if(child.hasDescendant(item))
+                    {
+                        retVal = child.removeItem(item,dispatchTreeEvent)
+                        return retVal;
+                    } 
+                }
+            }
+            else
+            {
+                retVal = ITreeItem(_children.removeItemAt(index));
+                if(retVal)
+                {
+                    var parent:ITreeItem = retVal.parent;
+                    retVal.setParent(null);
+                    removeEventListeners(retVal);
+                    dispatchEvent(new TreeDataEvent(TreeDataEvent.REMOVE,retVal,parent));
+                    
+                    if(dispatchTreeEvent)
+                        dispatchEvent(new TreeEvent(TreeEvent.NODE_REMOVED,retVal,parent));
+                }
+            }
+            return retVal;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function setParent(item:ITreeItem):void
+        {
+            if(item == this)
+                throw new Error("We cannot be our own parent");
+            
+            if(_parent)
+                _parent.removeItem(item,false);    
+            
+            _parent = item;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function getAllExpandedItems():IList
+        {
+            var retVal:ArrayCollection = new ArrayCollection();
+            for each(var item:ITreeItem in items)
+            {
+                retVal.addItem(item);
+                if(!item.expanded)
+                    continue;
+                retVal.addAll(item.getAllExpandedItems());
+            }
+            
+            return retVal;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function getAllItems():IList
+        {
+            var retVal:ArrayCollection = new ArrayCollection();
+            for each(var item:ITreeItem in items)
+            {
+                retVal.addItem(item);
+                retVal.addAll(item.getAllItems());
+            }
+            
+            return retVal;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function expandRecursive():void
+        {
+            expanded = true;
+            for each(var item:ITreeItem in items)
+            {
+                item.expandRecursive();
+            }
+        }
+        
+        /**
+         * This method is used to remove listeners added to an item.
+         * This method is called when items are being removed from the tree
+         * or when events do not need to be listened to.
+         * 
+         * @param item The item to remove the event listeners from
+         */ 
+        protected function removeEventListeners(item:ITreeItem):void
+        {
+            item.removeEventListener(TreeDataEvent.ADD, handler);
+            item.removeEventListener(TreeDataEvent.REMOVE, handler);
+            
+            item.removeEventListener(TreeEvent.NODE_INSERTED, handler);
+            item.removeEventListener(TreeEvent.NODE_EXPANDED, handler);
+            item.removeEventListener(TreeEvent.NODE_COLLAPSED, handler);
+            item.removeEventListener(TreeEvent.NODE_REMOVED, handler);
+        }
+        
+        /**
+         * This method is used to add listeners added to an item.
+         * This method is called when items are being added to the tree
+         * 
+         * @param item The item to add the event listeners to
+         */ 
+        protected function addEventListeners(item:ITreeItem):void
+        {
+            item.addEventListener(TreeDataEvent.ADD, handler);
+            item.addEventListener(TreeDataEvent.REMOVE, handler);
+            
+            item.addEventListener(TreeEvent.NODE_INSERTED, handler);
+            item.addEventListener(TreeEvent.NODE_EXPANDED, handler);
+            item.addEventListener(TreeEvent.NODE_COLLAPSED, handler);
+            item.addEventListener(TreeEvent.NODE_REMOVED, handler);
+        }
+        
+        /**
+         * Default handler for all Tree and TreeDataEvents
+         */ 
+        protected function handler(e:Event):void
+        {
+            dispatchEvent(e);
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function get indentLevel():int
+        {
+            if(parent)
+                return parent.indentLevel + 1;
+            
+            return 0;
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        [Bindable]
+        public function get expanded():Boolean { return _expanded; }
+        public function set expanded(value:Boolean):void 
+        { 
+            if(value == _expanded)
+                return;
+            
+            _expanded = value;
+            
+            if(_expanded)
+                dispatchEvent(new TreeEvent(TreeEvent.NODE_EXPANDED,this,parent));
+            else
+                dispatchEvent(new TreeEvent(TreeEvent.NODE_COLLAPSED,this,parent));
+        }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function get parent():ITreeItem { return _parent; }
+        
+        /**
+         * @inheritDoc
+         */ 
+        public function get items():IList { return _children; }
+        public function set items(value:IList):void
+        {
+            var item:ITreeItem;
+            for each(item in _children)
+            {
+                removeItem(item);
+            }
+            
+            for each(item in value)
+            {
+                addItem(item);
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+﻿/** * @package nl.eriknoorland.parallax.targets */package nl.eriknoorland.parallax.targets{	import flash.display.Sprite;		public class MousePointer extends Sprite implements ITarget{		public override function get x():Number{			return mouseX;		}				public override function get y():Number{			return mouseY;		}	}}

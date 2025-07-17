@@ -1,0 +1,3 @@
+package cc.milkshape.framework.mvc{	import com.bourre.commands.FrontController;
+
+	public class Controller extends FrontController	{		private static var _oI:Controller;		public static function getInstance():Controller		{			if(!_oI) 				_oI = new Controller(new PrivateConstructorAccess());			return _oI;		}		public function Controller(access:PrivateConstructorAccess)		{		}		public function init():void		{		}	}}internal class PrivateConstructorAccess{}

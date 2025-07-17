@@ -1,0 +1,15 @@
+CLASS zcl_sw_class_in_sub_package DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+  "SubPackage class
+ENDCLASS.
+
+
+
+CLASS zcl_sw_class_in_sub_package IMPLEMENTATION.
+ENDCLASS.
