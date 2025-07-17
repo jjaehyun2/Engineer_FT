@@ -1,0 +1,244 @@
+=== The Stack 데이터셋 전처리 시작: Thu Jul 17 09:26:58 UTC 2025 ===
+- 입력 경로: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw
+- 출력 경로: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/processed
+- 사용 가능한 디스크 공간: 3.4T
+- 처리할 언어: java javascript python
+
+=== java 데이터셋 전처리 시작: Thu Jul 17 09:26:58 UTC 2025 ===
+[2025-07-17 09:26:58,347] INFO [__main__.process_language_data:56] Processing java data
+[2025-07-17 09:26:58,348] INFO [__main__.process_language_data:72] Found 0 files to process in java dataset
+[2025-07-17 09:26:58,348] INFO [__main__.process_language_data:138] Completed processing java: 0 files, 0 examples, 0 errors
+=== java 데이터셋 전처리 완료: Thu Jul 17 09:26:58 UTC 2025 ===
+- 출력 크기: 4.0K (파일 0개)
+
+=== javascript 데이터셋 전처리 시작: Thu Jul 17 09:26:58 UTC 2025 ===
+[2025-07-17 09:26:58,465] INFO [__main__.process_language_data:56] Processing javascript data
+[2025-07-17 09:26:58,466] INFO [__main__.process_language_data:72] Found 0 files to process in javascript dataset
+[2025-07-17 09:26:58,466] INFO [__main__.process_language_data:138] Completed processing javascript: 0 files, 0 examples, 0 errors
+=== javascript 데이터셋 전처리 완료: Thu Jul 17 09:26:58 UTC 2025 ===
+- 출력 크기: 4.0K (파일 0개)
+
+=== python 데이터셋 전처리 시작: Thu Jul 17 09:26:58 UTC 2025 ===
+[2025-07-17 09:26:58,584] INFO [__main__.process_language_data:56] Processing python data
+[2025-07-17 09:26:58,584] INFO [__main__.process_language_data:72] Found 100 files to process in python dataset
+[2025-07-17 09:26:58,584] INFO [__main__.process_language_data:81] Processing file 1/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0056.jsonl
+[2025-07-17 09:26:58,612] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,612] INFO [__main__.process_language_data:81] Processing file 2/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0071.jsonl
+[2025-07-17 09:26:58,642] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,642] INFO [__main__.process_language_data:81] Processing file 3/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0017.jsonl
+[2025-07-17 09:26:58,671] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,672] INFO [__main__.process_language_data:81] Processing file 4/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0033.jsonl
+[2025-07-17 09:26:58,696] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,696] INFO [__main__.process_language_data:81] Processing file 5/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0086.jsonl
+[2025-07-17 09:26:58,719] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,719] INFO [__main__.process_language_data:81] Processing file 6/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0001.jsonl
+[2025-07-17 09:26:58,753] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,753] INFO [__main__.process_language_data:81] Processing file 7/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0059.jsonl
+[2025-07-17 09:26:58,778] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,778] INFO [__main__.process_language_data:81] Processing file 8/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0045.jsonl
+[2025-07-17 09:26:58,802] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,802] INFO [__main__.process_language_data:81] Processing file 9/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0080.jsonl
+[2025-07-17 09:26:58,826] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,826] INFO [__main__.process_language_data:81] Processing file 10/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0008.jsonl
+[2025-07-17 09:26:58,852] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,852] INFO [__main__.process_language_data:132] Progress: 10/100 files, 0 total examples
+[2025-07-17 09:26:58,852] INFO [__main__.process_language_data:81] Processing file 11/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0063.jsonl
+[2025-07-17 09:26:58,875] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,875] INFO [__main__.process_language_data:81] Processing file 12/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0072.jsonl
+[2025-07-17 09:26:58,896] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,896] INFO [__main__.process_language_data:81] Processing file 13/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0074.jsonl
+[2025-07-17 09:26:58,916] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,916] INFO [__main__.process_language_data:81] Processing file 14/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0034.jsonl
+[2025-07-17 09:26:58,937] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,937] INFO [__main__.process_language_data:81] Processing file 15/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0004.jsonl
+[2025-07-17 09:26:58,962] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,962] INFO [__main__.process_language_data:81] Processing file 16/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0024.jsonl
+[2025-07-17 09:26:58,983] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:58,983] INFO [__main__.process_language_data:81] Processing file 17/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0041.jsonl
+[2025-07-17 09:26:59,004] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,004] INFO [__main__.process_language_data:81] Processing file 18/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0010.jsonl
+[2025-07-17 09:26:59,030] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,030] INFO [__main__.process_language_data:81] Processing file 19/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0069.jsonl
+[2025-07-17 09:26:59,050] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,051] INFO [__main__.process_language_data:81] Processing file 20/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0060.jsonl
+[2025-07-17 09:26:59,072] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,072] INFO [__main__.process_language_data:132] Progress: 20/100 files, 0 total examples
+[2025-07-17 09:26:59,072] INFO [__main__.process_language_data:81] Processing file 21/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0078.jsonl
+[2025-07-17 09:26:59,092] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,092] INFO [__main__.process_language_data:81] Processing file 22/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0095.jsonl
+[2025-07-17 09:26:59,114] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,114] INFO [__main__.process_language_data:81] Processing file 23/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0046.jsonl
+[2025-07-17 09:26:59,135] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,135] INFO [__main__.process_language_data:81] Processing file 24/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0061.jsonl
+[2025-07-17 09:26:59,156] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,156] INFO [__main__.process_language_data:81] Processing file 25/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0029.jsonl
+[2025-07-17 09:26:59,181] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,181] INFO [__main__.process_language_data:81] Processing file 26/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0099.jsonl
+[2025-07-17 09:26:59,201] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,201] INFO [__main__.process_language_data:81] Processing file 27/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0048.jsonl
+[2025-07-17 09:26:59,223] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,223] INFO [__main__.process_language_data:81] Processing file 28/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0011.jsonl
+[2025-07-17 09:26:59,249] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,249] INFO [__main__.process_language_data:81] Processing file 29/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0097.jsonl
+[2025-07-17 09:26:59,270] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,270] INFO [__main__.process_language_data:81] Processing file 30/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0093.jsonl
+[2025-07-17 09:26:59,291] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,291] INFO [__main__.process_language_data:132] Progress: 30/100 files, 0 total examples
+[2025-07-17 09:26:59,291] INFO [__main__.process_language_data:81] Processing file 31/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0087.jsonl
+[2025-07-17 09:26:59,310] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,310] INFO [__main__.process_language_data:81] Processing file 32/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0096.jsonl
+[2025-07-17 09:26:59,332] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,332] INFO [__main__.process_language_data:81] Processing file 33/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0068.jsonl
+[2025-07-17 09:26:59,355] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,355] INFO [__main__.process_language_data:81] Processing file 34/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0066.jsonl
+[2025-07-17 09:26:59,376] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,376] INFO [__main__.process_language_data:81] Processing file 35/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0005.jsonl
+[2025-07-17 09:26:59,398] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,399] INFO [__main__.process_language_data:81] Processing file 36/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0027.jsonl
+[2025-07-17 09:26:59,420] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,420] INFO [__main__.process_language_data:81] Processing file 37/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0025.jsonl
+[2025-07-17 09:26:59,442] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,442] INFO [__main__.process_language_data:81] Processing file 38/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0018.jsonl
+[2025-07-17 09:26:59,466] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,466] INFO [__main__.process_language_data:81] Processing file 39/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0051.jsonl
+[2025-07-17 09:26:59,488] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,488] INFO [__main__.process_language_data:81] Processing file 40/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0079.jsonl
+[2025-07-17 09:26:59,509] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,509] INFO [__main__.process_language_data:132] Progress: 40/100 files, 0 total examples
+[2025-07-17 09:26:59,510] INFO [__main__.process_language_data:81] Processing file 41/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0037.jsonl
+[2025-07-17 09:26:59,530] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,530] INFO [__main__.process_language_data:81] Processing file 42/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0084.jsonl
+[2025-07-17 09:26:59,552] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,552] INFO [__main__.process_language_data:81] Processing file 43/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0006.jsonl
+[2025-07-17 09:26:59,575] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,575] INFO [__main__.process_language_data:81] Processing file 44/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0042.jsonl
+[2025-07-17 09:26:59,596] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,596] INFO [__main__.process_language_data:81] Processing file 45/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0052.jsonl
+[2025-07-17 09:26:59,617] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,617] INFO [__main__.process_language_data:81] Processing file 46/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0039.jsonl
+[2025-07-17 09:26:59,639] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,639] INFO [__main__.process_language_data:81] Processing file 47/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0064.jsonl
+[2025-07-17 09:26:59,659] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,659] INFO [__main__.process_language_data:81] Processing file 48/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0091.jsonl
+[2025-07-17 09:26:59,681] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,681] INFO [__main__.process_language_data:81] Processing file 49/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0043.jsonl
+[2025-07-17 09:26:59,701] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,702] INFO [__main__.process_language_data:81] Processing file 50/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0070.jsonl
+[2025-07-17 09:26:59,723] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,724] INFO [__main__.process_language_data:132] Progress: 50/100 files, 0 total examples
+[2025-07-17 09:26:59,724] INFO [__main__.process_language_data:81] Processing file 51/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0012.jsonl
+[2025-07-17 09:26:59,751] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,751] INFO [__main__.process_language_data:81] Processing file 52/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0047.jsonl
+[2025-07-17 09:26:59,771] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,771] INFO [__main__.process_language_data:81] Processing file 53/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0044.jsonl
+[2025-07-17 09:26:59,793] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,793] INFO [__main__.process_language_data:81] Processing file 54/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0050.jsonl
+[2025-07-17 09:26:59,812] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,812] INFO [__main__.process_language_data:81] Processing file 55/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0067.jsonl
+[2025-07-17 09:26:59,832] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,832] INFO [__main__.process_language_data:81] Processing file 56/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0003.jsonl
+[2025-07-17 09:26:59,858] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,858] INFO [__main__.process_language_data:81] Processing file 57/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0021.jsonl
+[2025-07-17 09:26:59,882] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,882] INFO [__main__.process_language_data:81] Processing file 58/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0083.jsonl
+[2025-07-17 09:26:59,902] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,902] INFO [__main__.process_language_data:81] Processing file 59/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0016.jsonl
+[2025-07-17 09:26:59,927] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,927] INFO [__main__.process_language_data:81] Processing file 60/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0026.jsonl
+[2025-07-17 09:26:59,948] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,948] INFO [__main__.process_language_data:132] Progress: 60/100 files, 0 total examples
+[2025-07-17 09:26:59,948] INFO [__main__.process_language_data:81] Processing file 61/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0098.jsonl
+[2025-07-17 09:26:59,968] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,968] INFO [__main__.process_language_data:81] Processing file 62/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0020.jsonl
+[2025-07-17 09:26:59,995] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:26:59,995] INFO [__main__.process_language_data:81] Processing file 63/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0073.jsonl
+[2025-07-17 09:27:00,016] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,016] INFO [__main__.process_language_data:81] Processing file 64/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0036.jsonl
+[2025-07-17 09:27:00,037] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,037] INFO [__main__.process_language_data:81] Processing file 65/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0007.jsonl
+[2025-07-17 09:27:00,061] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,061] INFO [__main__.process_language_data:81] Processing file 66/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0028.jsonl
+[2025-07-17 09:27:00,083] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,084] INFO [__main__.process_language_data:81] Processing file 67/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0089.jsonl
+[2025-07-17 09:27:00,105] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,105] INFO [__main__.process_language_data:81] Processing file 68/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0055.jsonl
+[2025-07-17 09:27:00,126] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,126] INFO [__main__.process_language_data:81] Processing file 69/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0090.jsonl
+[2025-07-17 09:27:00,147] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,147] INFO [__main__.process_language_data:81] Processing file 70/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0082.jsonl
+[2025-07-17 09:27:00,166] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,167] INFO [__main__.process_language_data:132] Progress: 70/100 files, 0 total examples
+[2025-07-17 09:27:00,167] INFO [__main__.process_language_data:81] Processing file 71/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0040.jsonl
+[2025-07-17 09:27:00,188] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,188] INFO [__main__.process_language_data:81] Processing file 72/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0081.jsonl
+[2025-07-17 09:27:00,208] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,208] INFO [__main__.process_language_data:81] Processing file 73/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0057.jsonl
+[2025-07-17 09:27:00,230] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,230] INFO [__main__.process_language_data:81] Processing file 74/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0009.jsonl
+[2025-07-17 09:27:00,255] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,255] INFO [__main__.process_language_data:81] Processing file 75/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0049.jsonl
+[2025-07-17 09:27:00,277] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,278] INFO [__main__.process_language_data:81] Processing file 76/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0088.jsonl
+[2025-07-17 09:27:00,298] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,298] INFO [__main__.process_language_data:81] Processing file 77/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0023.jsonl
+[2025-07-17 09:27:00,320] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,320] INFO [__main__.process_language_data:81] Processing file 78/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0014.jsonl
+[2025-07-17 09:27:00,344] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,344] INFO [__main__.process_language_data:81] Processing file 79/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0019.jsonl
+[2025-07-17 09:27:00,366] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,366] INFO [__main__.process_language_data:81] Processing file 80/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0015.jsonl
+[2025-07-17 09:27:00,391] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,391] INFO [__main__.process_language_data:132] Progress: 80/100 files, 0 total examples
+[2025-07-17 09:27:00,391] INFO [__main__.process_language_data:81] Processing file 81/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0013.jsonl
+[2025-07-17 09:27:00,418] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,418] INFO [__main__.process_language_data:81] Processing file 82/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0038.jsonl
+[2025-07-17 09:27:00,440] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,440] INFO [__main__.process_language_data:81] Processing file 83/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0094.jsonl
+[2025-07-17 09:27:00,461] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,461] INFO [__main__.process_language_data:81] Processing file 84/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0076.jsonl
+[2025-07-17 09:27:00,483] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,483] INFO [__main__.process_language_data:81] Processing file 85/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0085.jsonl
+[2025-07-17 09:27:00,506] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,506] INFO [__main__.process_language_data:81] Processing file 86/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0054.jsonl
+[2025-07-17 09:27:00,528] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,528] INFO [__main__.process_language_data:81] Processing file 87/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0053.jsonl
+[2025-07-17 09:27:00,554] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,554] INFO [__main__.process_language_data:81] Processing file 88/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0030.jsonl
+[2025-07-17 09:27:00,576] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,576] INFO [__main__.process_language_data:81] Processing file 89/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0062.jsonl
+[2025-07-17 09:27:00,598] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,598] INFO [__main__.process_language_data:81] Processing file 90/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0002.jsonl
+[2025-07-17 09:27:00,624] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,624] INFO [__main__.process_language_data:132] Progress: 90/100 files, 0 total examples
+[2025-07-17 09:27:00,624] INFO [__main__.process_language_data:81] Processing file 91/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0065.jsonl
+[2025-07-17 09:27:00,647] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,647] INFO [__main__.process_language_data:81] Processing file 92/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0092.jsonl
+[2025-07-17 09:27:00,671] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,671] INFO [__main__.process_language_data:81] Processing file 93/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0058.jsonl
+[2025-07-17 09:27:00,693] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,693] INFO [__main__.process_language_data:81] Processing file 94/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0035.jsonl
+[2025-07-17 09:27:00,715] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,715] INFO [__main__.process_language_data:81] Processing file 95/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0077.jsonl
+[2025-07-17 09:27:00,737] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,737] INFO [__main__.process_language_data:81] Processing file 96/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0032.jsonl
+[2025-07-17 09:27:00,758] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,759] INFO [__main__.process_language_data:81] Processing file 97/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0000.jsonl
+[2025-07-17 09:27:00,782] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,782] INFO [__main__.process_language_data:81] Processing file 98/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0031.jsonl
+[2025-07-17 09:27:00,805] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,805] INFO [__main__.process_language_data:81] Processing file 99/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0022.jsonl
+[2025-07-17 09:27:00,831] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,831] INFO [__main__.process_language_data:81] Processing file 100/100: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python/chunk_0075.jsonl
+[2025-07-17 09:27:00,853] INFO [__main__.process_language_data:127] Extracted 0 examples from file
+[2025-07-17 09:27:00,853] INFO [__main__.process_language_data:132] Progress: 100/100 files, 0 total examples
+[2025-07-17 09:27:00,853] INFO [__main__.process_language_data:138] Completed processing python: 100 files, 0 examples, 100000 errors
+=== python 데이터셋 전처리 완료: Thu Jul 17 09:27:00 UTC 2025 ===
+- 출력 크기: 4.0K (파일 35개)
+
+=== The Stack 데이터셋 전처리 종료: Thu Jul 17 09:27:00 UTC 2025 ===
+
+=== 전처리 결과 요약 ===
+- java: 4.0K (파일 0개)
+- javascript: 4.0K (파일 0개)
+- python: 4.0K (파일 35개)
+- 남은 디스크 공간: 3.4T

@@ -1,0 +1,12 @@
+=== The Stack Python 데이터셋 다운로드 시작: Thu Jul 17 09:07:13 UTC 2025 ===
+- 데이터 저장 경로: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python
+- 설정 파일: /workspace/FTEngineer/Engineer_FT-3/stack-code-model/config/download_config.json
+- 사용 가능한 디스크 공간: 3.4T
+- 설정 파일 로드 중...
+  jq 명령어를 찾을 수 없어 기본 설정을 사용합니다.
+=== Python 데이터셋 다운로드 시작 (파일 수: 100000) ===
+[2025-07-17 09:07:15,106] INFO [__main__.download_language_dataset:20] Downloading python dataset to /workspace/FTEngineer/Engineer_FT-3/stack-code-model/data/raw/python
+[2025-07-17 09:07:29,449] ERROR [__main__.download_language_dataset:59] Error downloading python dataset: BuilderConfig 'data/python' not found. Available: ['default']
+=== Python 데이터셋 다운로드 완료: Thu Jul 17 09:07:29 UTC 2025 ===
+- 다운로드 크기: 4.0K (파일 0개)
+- 남은 디스크 공간: 3.4T

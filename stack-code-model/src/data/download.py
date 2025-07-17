@@ -22,7 +22,7 @@ def download_language_dataset(language, max_files=None, output_dir="data/raw",
     try:
         # 스트리밍 또는 전체 다운로드 모드
         if use_streaming:
-            dataset = load_dataset("bigcode/the-stack", f"data/{language}", 
+            dataset = load_dataset("bigcode/the-stack", "default", 
                                    split="train", streaming=True)
             
             # 파일별로 저장

@@ -44,104 +44,99 @@ def preprocess_file(file_content, language):
     return processed_data
 
 def process_language_data(input_dir, output_dir, language, max_files=None):
-    """언어별 데이터셋 전처리"""
+    """특정 언어 데이터 전처리
+    
+    Args:
+        input_dir: 입력 디렉토리 경로
+        output_dir: 출력 디렉토리 경로
+        language: 처리할 언어
+        max_files: 처리할 최대 파일 수 (None이면 모두 처리)
+    """
+    logger = logging.getLogger(__name__)
     logger.info(f"Processing {language} data")
     
-    os.makedirs(f"{output_dir}/{language}_clean", exist_ok=True)
+    input_path = os.path.join(input_dir, language)
+    output_path = os.path.join(output_dir, f"{language}_clean")
+    os.makedirs(output_path, exist_ok=True)
     
-    files_processed = 0
-    input_path = f"{input_dir}/{language}"
+    # 입력 디렉토리의 모든 파일 리스트 획득
+    all_files = []
+    for root, _, files in os.walk(input_path):
+        for filename in files:
+            all_files.append(os.path.join(root, filename))
     
-    # 파일 형식에 따라 다르게 처리
-    if os.path.isdir(input_path) and not os.path.exists(f"{input_path}/dataset_info.json"):
-        # 일반 파일 디렉토리인 경우
-        for chunk_file in sorted(os.listdir(input_path)):
-            if not chunk_file.endswith('.jsonl'):
-                continue
-                
-            output_file = f"{output_dir}/{language}_clean/{chunk_file}"
-            
-            with open(f"{input_path}/{chunk_file}", 'r') as f_in, \
-                open(output_file, 'w') as f_out:
-                
-                for line in f_in:
-                    try:
-                        example = json.loads(line.strip())
-                        content = example.get("content", "")
-                        
-                        if not content or len(content) < 100:
-                            continue
-                            
-                        processed = preprocess_file(content, language)
-                        processed["repo"] = example.get("repo", "")
-                        processed["path"] = example.get("path", "")
-                        processed["stars"] = example.get("stars", 0)
-                        
-                        f_out.write(json.dumps(processed) + "\n")
-                        
-                        files_processed += 1
-                        if files_processed % 1000 == 0:
-                            logger.info(f"Processed {files_processed} {language} files")
-                            
-                        if max_files and files_processed >= max_files:
-                            break
-                            
-                    except Exception as e:
-                        logger.warning(f"Error processing file: {e}")
-                        continue
-                        
-            if max_files and files_processed >= max_files:
-                break
-    else:
-        # Hugging Face datasets 형식으로 저장된 경우
-        from datasets import load_from_disk
+    # 필요하면 파일 수 제한
+    if max_files and len(all_files) > max_files:
+        all_files = all_files[:max_files]
+    
+    logger.info(f"Found {len(all_files)} files to process in {language} dataset")
+    
+    # 진행 상황 추적
+    file_count = len(all_files)
+    processed_count = 0
+    error_count = 0
+    example_count = 0
+    
+    for input_file in all_files:
+        logger.info(f"Processing file {processed_count+1}/{file_count}: {input_file}")
         
         try:
-            dataset = load_from_disk(input_path)
-            logger.info(f"Loaded dataset with {len(dataset)} examples")
+            # 파일 읽기
+            with open(input_file, 'r', encoding='utf-8', errors='ignore') as f:
+                lines = f.readlines()
             
-            with ProcessPoolExecutor() as executor:
-                batch_size = 1000
-                for i in range(0, len(dataset), batch_size):
-                    if max_files and i >= max_files:
-                        break
+            file_examples = 0
+            
+            # 각 줄 처리
+            for i, line in enumerate(lines):
+                try:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    
+                    # JSON 파싱 시도
+                    example = json.loads(line)
+                    
+                    # 필요한 필드 확인 및 추출
+                    if 'content' in example:
+                        code_content = example['content']
                         
-                    end_idx = min(i + batch_size, len(dataset))
-                    batch = dataset[i:end_idx]
+                        # 코드가 비어있지 않은지 확인
+                        if code_content.strip():
+                            # 파일 이름 생성
+                            base_filename = os.path.basename(input_file)
+                            output_file = os.path.join(
+                                output_path, 
+                                f"{os.path.splitext(base_filename)[0]}_{i}.py"
+                            )
+                            
+                            # 처리된 파일 저장
+                            with open(output_file, 'w', encoding='utf-8') as out_f:
+                                out_f.write(code_content)
+                            
+                            file_examples += 1
+                            example_count += 1
                     
-                    # 병렬 처리
-                    futures = []
-                    for example in batch:
-                        future = executor.submit(
-                            preprocess_file, 
-                            example["content"], 
-                            language
-                        )
-                        futures.append((future, example))
-                    
-                    # 결과 저장
-                    output_file = f"{output_dir}/{language}_clean/chunk_{i//batch_size:04d}.jsonl"
-                    with open(output_file, 'w') as f_out:
-                        for future, example in futures:
-                            try:
-                                processed = future.result()
-                                processed["repo"] = example.get("repo", "")
-                                processed["path"] = example.get("path", "")
-                                processed["stars"] = example.get("stars", 0)
-                                
-                                f_out.write(json.dumps(processed) + "\n")
-                                
-                                files_processed += 1
-                            except Exception as e:
-                                logger.warning(f"Error in parallel processing: {e}")
-                    
-                    logger.info(f"Processed batch {i//batch_size}, total: {files_processed}")
-                    
+                except json.JSONDecodeError as e:
+                    logger.debug(f"Error parsing JSON in file {input_file}, line {i+1}: {e}")
+                    error_count += 1
+                except Exception as e:
+                    logger.debug(f"Error processing line {i+1} in file {input_file}: {e}")
+                    error_count += 1
+            
+            logger.info(f"Extracted {file_examples} examples from file")
+            processed_count += 1
+            
+            # 진행 상황 보고
+            if processed_count % 10 == 0:
+                logger.info(f"Progress: {processed_count}/{file_count} files, {example_count} total examples")
+                
         except Exception as e:
-            logger.error(f"Error loading dataset from disk: {e}")
+            logger.warning(f"Error processing file {input_file}: {e}")
+            error_count += 1
     
-    logger.info(f"Completed processing {files_processed} {language} files")
-    return files_processed
+    logger.info(f"Completed processing {language}: {processed_count} files, {example_count} examples, {error_count} errors")
+    return example_count
 
 def main():
     parser = argparse.ArgumentParser(description="Preprocess The Stack dataset")
